@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 
 // https://localhost:3000?test=1
 app.use(function(req, res, next) {
-	res.locals.showTest = app.get('env') !== 'production' && req.query.test = '1';
+	res.locals.showTest = app.get('env') !== 'production' && req.query.test === '1';
 	next();
 });
 
